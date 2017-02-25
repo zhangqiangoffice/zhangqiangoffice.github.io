@@ -67,7 +67,7 @@ theme: hexo-theme-aiki
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
+deploy: 
   type: git
   repository: ssh://git@github.com/zhangqiangoffice/zhangqiangoffice.github.io
   # repository: https://github.com/zhangqiangoffice/zhangqiangoffice.github.io.git

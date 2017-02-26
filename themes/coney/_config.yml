@@ -24,8 +24,8 @@ rss:  atom.xml ## RSS address.
 
 #### Image
 imglogo:
-  enable: false             ## display image logo true/false.
-  src: img/logo.svg        ## `.svg` and `.png` are recommended,please put image into the theme folder `/coney/source/img`.
+  enable: true             ## display image logo true/false.
+  src: img/logo.png        ## `.svg` and `.png` are recommended,please put image into the theme folder `/coney/source/img`.
 favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/coney/source/img`.     
 
 #### Author Avatar Picture
@@ -88,8 +88,8 @@ baidu_share:
 
 theme_color:
     background: "#dddddd"
-    font: "#817c7c"
-    theme: '#ea6753'
+    font: "#444"
+    theme: '#009688'
     footer: "#ddd"
  ####Baidu search 
 baidu_search:

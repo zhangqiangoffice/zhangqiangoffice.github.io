@@ -7,12 +7,17 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>无名大强 博客</title>
+    <title>JavaScript ES6中的var、let、const | 无名大强 博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="无名大强">
     
-    <meta name="description" content="无名大强关于前端技术的博客，基于hexo">
+    <meta name="description" content="JavaScript ES6中的var、let、constconst 常量 
+let 变量，块作用域，不能重复声明覆盖 
+var 变量，函数作用域，能重复声明覆盖
+
+var：声明全局变量，换句话理解就是，声明在for循环中的变量，跳出for循环同样可以使用。
+for(var i=0;i&amp;lt;=10">
     
     
     
@@ -73,168 +78,117 @@
 
     </header>
     <div id="container">
-      <div id="main">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/10/12/JavaScript-ES6中的var、let、const/" title="JavaScript ES6中的var、let、const" itemprop="url">JavaScript ES6中的var、let、const</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://zhangqiangoffice.github.io" title="无名大强">无名大强</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-10-12T14:34:57.000Z" itemprop="datePublished">2016-10-12</time>
+    更新日期:<time datetime="2017-02-27T00:52:18.445Z" itemprop="dateModified">2017-02-27</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-ES6中的var、let、const"><span class="toc-number">1.</span> <span class="toc-text">JavaScript ES6中的var、let、const</span></a></li></ol>
+		</div>
+		
+		<h1 id="JavaScript-ES6中的var、let、const"><a href="#JavaScript-ES6中的var、let、const" class="headerlink" title="JavaScript ES6中的var、let、const"></a>JavaScript ES6中的var、let、const</h1><p>const 常量 </p>
+<p>let 变量，块作用域，不能重复声明覆盖 </p>
+<p>var 变量，函数作用域，能重复声明覆盖</p>
+<ul>
+<li><p>var：声明全局变量，换句话理解就是，声明在for循环中的变量，跳出for循环同样可以使用。</p>
+<p><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;=<span class="hljs-number">1000</span>;i++){</p>
+<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; sum=&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+sum+=i;
+</code></pre><p>}</p>
+<pre><code>alert(sum);`&lt;/pre&gt;
+</code></pre><pre>`声明在for循环内部的sum，跳出for循环一样可以使用，不会报错正常弹出结果
+`</pre>
+</li>
+<li><p>let：声明块级变量，即局部变量。    在上面的例子中，跳出for循环，再使用sum变量就会报错</p>
+<pre class="prettyprint">`<span class="hljs-pi">'use strict'</span>;
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  <span class="hljs-keyword">var</span> varTest = <span class="hljs-string">'test var OK.'</span>;
+  <span class="hljs-keyword">let</span> letTest = <span class="hljs-string">'test let OK.'</span>;
+
+  {
+    <span class="hljs-keyword">var</span> varTest = <span class="hljs-string">'varTest changed.'</span>;
+    <span class="hljs-keyword">let</span> letTest = <span class="hljs-string">'letTest changed.'</span>;
+  }
+
+  console.log(varTest); <span class="hljs-comment">//输出"varTest changed."，内部"{}"中声明的varTest变量覆盖外部的letTest声明</span>
+  console.log(letTest); <span class="hljs-comment">//输出"test let OK."，内部"{}"中声明的letTest和外部的letTest不是同一个变量</span>
+}());`</pre>
+
+<p><pre>`注意：必须声明’use strict’;后才能使用let声明变量否则浏览并不能显示结果</pre></p>
+</li>
+<li><p>const：用于声明常量，也具有块级作用域<br>const PI=3.14;</p>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/21/360浏览器默认打开页面的方式（极速、IE）/" title="360浏览器默认打开页面的方式（极速、IE）" itemprop="url">
-  
-      <time datetime="2017-02-21T04:35:51.000Z" itemprop="datePublished">2017-02-21</time>
-    <h1 itemprop="name">360浏览器默认打开页面的方式（极速、IE）</h1>
-    
-     
-           <p itemprop="description" >360浏览器默认打开页面的方式（极速、IE）一直对360家的东西没有好感，流氓软件一般，尤其是360浏览器，在客户的电脑上默认安装，默认优先启动。更可气的是，它都是以IE的模式来打开我的网页。好几次，我被叫到客户面前调试，都是因为这个问题。 
-后来发现，打开360浏览器自家的网页</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/03/读《UML基础、案例与应用》有感/" title="读《UML基础、案例与应用》有感" itemprop="url">
-  
-      <time datetime="2017-02-03T02:24:50.000Z" itemprop="datePublished">2017-02-03</time>
-    <h1 itemprop="name">读《UML基础、案例与应用》有感</h1>
-    
-     
-           <p itemprop="description" >《UML基础、案例与应用》这本书是《人人都是产品经理》里提到的一本书，主要是讲统一建模语言的。全书分为三个部分，分别是：基础知识、学习案例和高级应用。 
-UML（统一建模语言）实际上就是用一些框框、线条和箭头来表述一个复杂的系统或者流程。UML中，分为结构元素和行为元素两类。结构</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/01/24/读《人人都是产品经理》有感/" title="读《人人都是产品经理》有感" itemprop="url">
-  
-      <time datetime="2017-01-24T02:48:11.000Z" itemprop="datePublished">2017-01-24</time>
-    <h1 itemprop="name">读《人人都是产品经理》有感</h1>
-    
-     
-           <p itemprop="description" >《人人都是产品经理》并不讲具体的代码技巧，而是上升到一个项目领导的角度，来讲应该怎样设计开发一个产品。它不是一本讲技术的书，而是一本与管理有关的书。 
-《人人都是产品经理》从一个产品的需求讲起，再讲项目的实施、团队建设，最后是一些产品经理的主义和方法论。很类似软件工程，但比教科书</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/01/10/mongodb关联数据的设计/" title="mongodb关联数据的设计" itemprop="url">
-  
-      <time datetime="2017-01-10T02:45:50.000Z" itemprop="datePublished">2017-01-10</time>
-    <h1 itemprop="name">mongodb关联数据的设计</h1>
-    
-     
-           <p itemprop="description" >之前接触的都是MySQL这种关系型数据库的设计，很多数据库方面的思维已经被结构化查询语言束缚了。 
-　　最近在写一个类似论坛的一个小项目，前端用的是React，后端用node.js和mongodb。在写获取发帖列表接口的时候，需求是获取一个帖子数组，每个数组成员就是一个帖子对象，</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/01/03/2017年技术目标清单/" title="2017年技术目标清单" itemprop="url">
-  
-      <time datetime="2017-01-03T01:53:45.000Z" itemprop="datePublished">2017-01-03</time>
-    <h1 itemprop="name">2017年技术目标清单</h1>
-    
-     
-           <p itemprop="description" >2017年是一个服务器端技术年1.成功创建并运维一个网站2.nodejs项目docker化3.100篇博客4.阅读24本技术书籍</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/12/30/2016年工作总结/" title="2016年工作总结" itemprop="url">
-  
-      <time datetime="2016-12-30T01:49:13.000Z" itemprop="datePublished">2016-12-30</time>
-    <h1 itemprop="name">2016年工作总结</h1>
-    
-     
-           <p itemprop="description" >2016年即将结束，站在年终有必要回顾一下这一年的经历。其实经历并不复杂，我还在去年的那家公司，没有挪窝，这一年更多的是积累。 
-　　年初设定了2016年的技术目标，这一年里，这些目标始终坚持着，就算不是百分之百达成了，但每一项还是做到了。 
-　　 
-　　目标达成情况：1、虽然不</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/11/16/关于For-of/" title="关于For of" itemprop="url">
-  
-      <time datetime="2016-11-16T07:40:00.000Z" itemprop="datePublished">2016-11-16</time>
-    <h1 itemprop="name">关于For of</h1>
-    
-     
-           <p itemprop="description" >For of 是ES6的语法，所以有很多浏览器不支持，比如Android的WebView控件，这一点很容易想到。但是我在写React组件时，通过Balble进行了ES6到ES5转化，结果在涉及到For of时，程序不能正常运行，AS里的报错是Symbol is not defin</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/11/02/js-对象属性名为变量/" title="js 对象属性名为变量" itemprop="url">
-  
-      <time datetime="2016-11-02T04:21:55.000Z" itemprop="datePublished">2016-11-02</time>
-    <h1 itemprop="name">js 对象属性名为变量</h1>
-    
-     
-           <p itemprop="description" >在React项目中不可避免要用到setState(obj)这个函数，其中，obj为一个对象。如果传不同的obj可以，修改组件不同的状态。有的时候就想obj能根据参数动态生成。
-handleChange(event, type) {
-    &amp;lt;span class=&amp;quot</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/11/02/高度不定-垂直居中/" title="高度不定 垂直居中" itemprop="url">
-  
-      <time datetime="2016-11-02T02:05:25.000Z" itemprop="datePublished">2016-11-02</time>
-    <h1 itemprop="name">高度不定 垂直居中</h1>
-    
-     
-           <p itemprop="description" >在项目中遇到一个弹出框组件，组件宽度固定，但高度是不固定的，想要它居于整个屏幕中间，看似简单的一个设计，但没想到在垂直居中这一块遇到了很大的麻烦，最后经多方查找比较，得到了一个比较合适的方案
-&amp;lt;span class=&amp;quot;hljs-class&amp;quot;&amp;gt;.ra</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/10/26/判断JS对象是否拥有某属性/" title="判断JS对象是否拥有某属性" itemprop="url">
-  
-      <time datetime="2016-10-26T06:11:48.000Z" itemprop="datePublished">2016-10-26</time>
-    <h1 itemprop="name">判断JS对象是否拥有某属性</h1>
-    
-     
-           <p itemprop="description" >两种方式，但稍有区别
-1，in 运算符
-&amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;var&amp;lt;/span&amp;gt; obj = {name:&amp;lt;span class=&amp;quot;hljs-string&amp;quot;&amp;gt;&amp;apos;</p>
-        
-    
-  </a>
-</section>
 
 
-  <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-  </nav>
+<div class="article-share" id="share">
+
+  <div data-url="http://zhangqiangoffice.github.io/2016/10/12/JavaScript-ES6中的var、let、const/" data-title="JavaScript ES6中的var、let、const | 无名大强 博客" data-tsina="null" class="share clearfix">
+  </div>
 
 </div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/10/18/React子组件修改父组件的状态/" title="React子组件修改父组件的状态">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  React子组件修改父组件的状态</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/10/11/人生第一段gulp代码/"  title="人生第一段gulp代码">
+ <strong>NEXT:</strong><br/> 
+ <span>人生第一段gulp代码
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="JavaScript ES6中的var、let、const" data-thread-key="JavaScript-ES6中的var、let、const" data-author-key="无名大强" data-url="http://zhangqiangoffice.github.io/post/JavaScript-ES6中的var、let、const"></div>
+	
+</section>
+
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-ES6中的var、let、const"><span class="toc-number">1.</span> <span class="toc-text">JavaScript ES6中的var、let、const</span></a></li></ol>
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -309,8 +263,8 @@ handleChange(event, type) {
 
 </aside>
 </div>
-  </div>
-  <footer><div id="footer" >
+    </div>
+    <footer><div id="footer" >
     
             <p class="copyright"> © 2017 
 		
@@ -346,6 +300,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -365,7 +321,79 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -454,5 +482,5 @@ ga('send', 'pageview');
 
 
   </body>
- </html>
+</html>
 

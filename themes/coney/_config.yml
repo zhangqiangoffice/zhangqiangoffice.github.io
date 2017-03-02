@@ -55,6 +55,13 @@ fancybox: false
 ## if you want use fancybox in ANY post please copy the file `fancybox.js`.
 ## in theme folder `/coney/scripts` to your hexo blog folder `../scritps`.
 
+#### 此处用于配置代码块语法高亮
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: true
+  tab_replace:
+
 #### Author information
 author:
   google_plus:    ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998

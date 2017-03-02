@@ -13,7 +13,7 @@
     <meta name="author" content="无名大强">
     
     <meta name="description" content="最近在尝试React，发现之前很多用jQuery就能轻松解决的事情，现在遇到了新的挑战。当然这并不表示React不行，而是我还需要更多的研究和探索。React中的点击事件，想要传参数给方法，始终不得要领，现在摸索出一套写法，也许不是很完善，但先记录下来，以备以后改进
-&amp;lt;span class=&amp;">
+1234567891011121">
     
     
     
@@ -87,7 +87,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-10-21T03:09:49.000Z" itemprop="datePublished">2016-10-21</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.445Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:31:30.008Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -100,43 +100,10 @@
 		</div>
 		
 		<p>最近在尝试React，发现之前很多用jQuery就能轻松解决的事情，现在遇到了新的挑战。当然这并不表示React不行，而是我还需要更多的研究和探索。React中的点击事件，想要传参数给方法，始终不得要领，现在摸索出一套写法，也许不是很完善，但先记录下来，以备以后改进</p>
-<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;class&lt;/span&gt; SchemeSwitcher extends Component {
-    constructor(props){
-        super(props);
-
-        &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.handleClick = &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.handleClick.bind(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;);
-
-    };
-
-    handleClick(event) {
-        console.log(event.target.dataset.index);
-    }
-
-    render() {
-
-        &lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; listShows = appInfo.threeSchemeNameList.map((nameStr, index) =&amp;gt; {
-            &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; classStr = (index === &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.props.schemeIndex) ? &lt;span class=&quot;hljs-string&quot;&gt;&apos;selected&apos;&lt;/span&gt; : &lt;span class=&quot;hljs-string&quot;&gt;&apos;&apos;&lt;/span&gt;;
-
-            &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; (
-                &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;className&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{classStr}&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;key&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{index}&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;data-index&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{index}&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;onClick&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{this.handleClick}&lt;/span&gt;&amp;gt;&lt;/span&gt;{nameStr}&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;
-            )
-
-        });
-
-        return (
-            &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;className&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;switcher&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-                {listShows}
-            &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
-
-        );
-    };
-
-}&lt;/span&gt;`&lt;/pre&gt;
-
-其中：
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;className&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{classStr}&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;key&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{index}&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;data-index&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{index}&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;onClick&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;{this.handleClick}&lt;/span&gt;&amp;gt;&lt;/span&gt;{nameStr}&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;
-</code></pre><p>虽然key是React必须传的，但在组件中却不能获取； </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SchemeSwitcher</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props)&#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line"></div><div class="line">        <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    handleClick(event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(event.target.dataset.index);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line"></div><div class="line">        <span class="keyword">const</span> listShows = appInfo.threeSchemeNameList.map(<span class="function">(<span class="params">nameStr, index</span>) =&gt;</span> &#123;</div><div class="line">            <span class="keyword">let</span> classStr = (index === <span class="keyword">this</span>.props.schemeIndex) ? <span class="string">'selected'</span> : <span class="string">''</span>;</div><div class="line"></div><div class="line">            <span class="keyword">return</span> (</div><div class="line">                <span class="xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">className</span>=<span class="string">&#123;classStr&#125;</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span> <span class="attr">data-index</span>=<span class="string">&#123;index&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>&#123;nameStr&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">            )</div><div class="line"></div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">className</span>=<span class="string">"switcher"</span>&gt;</span></span></div><div class="line">                &#123;listShows&#125;</div><div class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"></div><div class="line">        );</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>其中：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;li className=&#123;classStr&#125; key=&#123;index&#125; data-index=&#123;index&#125; onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;&#123;nameStr&#125;&lt;<span class="regexp">/li&gt;</span></div></pre></td></tr></table></figure>
+<p>虽然key是React必须传的，但在组件中却不能获取； </p>
 <p>想通过onClick={this.handleClick(index)}这样的方式来直接传参数，但试过了，不行，函数在渲染时就被执行了； </p>
 <p>最后想到了用data-，可以了，不过写法跟$(this).data(‘index’)不一样哦。其实页可以用jQuery，但既然是想尝试新的东西，还是扬弃过去，使用js的原生写法吧：event.target.dataset.index。</p>
   

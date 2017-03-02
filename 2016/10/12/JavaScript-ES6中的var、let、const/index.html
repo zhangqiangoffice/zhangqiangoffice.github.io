@@ -17,7 +17,8 @@ let 变量，块作用域，不能重复声明覆盖
 var 变量，函数作用域，能重复声明覆盖
 
 var：声明全局变量，换句话理解就是，声明在for循环中的变量，跳出for循环同样可以使用。
-for(var i=0;i&amp;lt;=10">
+
+12345for(var i=0;i&amp;">
     
     
     
@@ -91,7 +92,7 @@ for(var i=0;i&amp;lt;=10">
     </p>
   <p class="article-time">
     <time datetime="2016-10-12T14:34:57.000Z" itemprop="datePublished">2016-10-12</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.445Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:27:47.578Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -107,35 +108,17 @@ for(var i=0;i&amp;lt;=10">
 <p>let 变量，块作用域，不能重复声明覆盖 </p>
 <p>var 变量，函数作用域，能重复声明覆盖</p>
 <ul>
-<li><p>var：声明全局变量，换句话理解就是，声明在for循环中的变量，跳出for循环同样可以使用。</p>
-<p><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;=<span class="hljs-number">1000</span>;i++){</p>
-<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; sum=&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
-sum+=i;
-</code></pre><p>}</p>
-<pre><code>alert(sum);`&lt;/pre&gt;
-</code></pre><pre>`声明在for循环内部的sum，跳出for循环一样可以使用，不会报错正常弹出结果
-`</pre>
+<li>var：声明全局变量，换句话理解就是，声明在for循环中的变量，跳出for循环同样可以使用。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;=<span class="number">1000</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> sum=<span class="number">0</span>;</div><div class="line">    sum+=i;</div><div class="line">&#125;</div><div class="line">    alert(sum);</div></pre></td></tr></table></figure>
+<pre><code>声明在for循环内部的sum，跳出for循环一样可以使用，不会报错正常弹出结果
+</code></pre><ul>
+<li>let：声明块级变量，即局部变量。<br>在上面的例子中，跳出for循环，再使用sum变量就会报错<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> varTest = <span class="string">'test var OK.'</span>;</div><div class="line">  <span class="keyword">let</span> letTest = <span class="string">'test let OK.'</span>;</div><div class="line"></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">var</span> varTest = <span class="string">'varTest changed.'</span>;</div><div class="line">    <span class="keyword">let</span> letTest = <span class="string">'letTest changed.'</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(varTest); <span class="comment">//输出"varTest changed."，内部"&#123;&#125;"中声明的varTest变量覆盖外部的letTest声明</span></div><div class="line">  <span class="built_in">console</span>.log(letTest); <span class="comment">//输出"test let OK."，内部"&#123;&#125;"中声明的letTest和外部的letTest不是同一个变量</span></div><div class="line">&#125;());</div></pre></td></tr></table></figure>
 </li>
-<li><p>let：声明块级变量，即局部变量。    在上面的例子中，跳出for循环，再使用sum变量就会报错</p>
-<pre class="prettyprint">`<span class="hljs-pi">'use strict'</span>;
-
-(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-  <span class="hljs-keyword">var</span> varTest = <span class="hljs-string">'test var OK.'</span>;
-  <span class="hljs-keyword">let</span> letTest = <span class="hljs-string">'test let OK.'</span>;
-
-  {
-    <span class="hljs-keyword">var</span> varTest = <span class="hljs-string">'varTest changed.'</span>;
-    <span class="hljs-keyword">let</span> letTest = <span class="hljs-string">'letTest changed.'</span>;
-  }
-
-  console.log(varTest); <span class="hljs-comment">//输出"varTest changed."，内部"{}"中声明的varTest变量覆盖外部的letTest声明</span>
-  console.log(letTest); <span class="hljs-comment">//输出"test let OK."，内部"{}"中声明的letTest和外部的letTest不是同一个变量</span>
-}());`</pre>
-
-<p><pre>`注意：必须声明’use strict’;后才能使用let声明变量否则浏览并不能显示结果</pre></p>
-</li>
-<li><p>const：用于声明常量，也具有块级作用域<br>const PI=3.14;</p>
-</li>
+</ul>
+<pre><code>注意：必须声明&apos;use strict&apos;;后才能使用let声明变量否则浏览并不能显示结果
+</code></pre><ul>
+<li>const：用于声明常量，也具有块级作用域<br>const PI=3.14;</li>
 </ul>
   
 	</div>

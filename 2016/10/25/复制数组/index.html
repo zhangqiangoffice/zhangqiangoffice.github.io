@@ -13,12 +13,8 @@
     <meta name="author" content="无名大强">
     
     <meta name="description" content="一、 错误实现 
-var array1 = new Array(“1”,”2”,”3”);  
-var array2;  
-array2 = array1;  
-array1.length = 0;  
-alert(array2); //返回为空
-这种做法是错的，因为javascript分原始类型与">
+123456789var array1 = new Array(“1”,”2”,”3”);  var array2;  array2 = array1;  array1.length = 0;  alert(array2); //返回为空
+这种做法是错的，因为javascript分">
     
     
     
@@ -92,7 +88,7 @@ alert(array2); //返回为空
     </p>
   <p class="article-time">
     <time datetime="2016-10-25T01:18:07.000Z" itemprop="datePublished">2016-10-25</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.448Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:17:06.862Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -105,28 +101,12 @@ alert(array2); //返回为空
 		</div>
 		
 		<p>一、 错误实现 </p>
-<p>var array1 = new Array(“1”,”2”,”3”);  </p>
-<p>var array2;  </p>
-<p>array2 = array1;  </p>
-<p>array1.length = 0;  </p>
-<p>alert(array2); //返回为空</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> array1 = <span class="keyword">new</span> <span class="built_in">Array</span>(“<span class="number">1</span>”,”<span class="number">2</span>”,”<span class="number">3</span>”);  </div><div class="line"></div><div class="line"><span class="keyword">var</span> array2;  </div><div class="line"></div><div class="line">array2 = array1;  </div><div class="line"></div><div class="line">array1.length = <span class="number">0</span>;  </div><div class="line"></div><div class="line">alert(array2); <span class="comment">//返回为空</span></div></pre></td></tr></table></figure>
 <p>这种做法是错的，因为javascript分原始类型与引用类型（与java、c#类似）。Array是引用类</p>
 <p>型。array2得到的是引用，所以对array1的修改会影响到array2。</p>
 <p>二、 使用slice()</p>
 <p>可使用slice()进行复制，因为slice()返回也是数组。</p>
-<p>var array1 = new Array(“1”,”2”,”3”);  </p>
-<p>var array2;  </p>
-<p>array2 = array1.slice(0);  </p>
-<p>array1.length = 0;  </p>
-<p>alert(array2); //返回1、2、3  </p>
-<p>三、 使用concat()</p>
-<p>注意concat()返回的并不是调用函数的Array，而是一个新的Array，所以可以利用这一点进行复制。</p>
-<p>var array1 = new Array(“1”,”2”,”3”);  </p>
-<p>var array2;  </p>
-<p>array2 = array1.concat();  </p>
-<p>array1.length = 0;  </p>
-<p>alert(array2); //返回1、2、3 </p>
-  
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> array1 = <span class="keyword">new</span> <span class="built_in">Array</span>(“<span class="number">1</span>”,”<span class="number">2</span>”,”<span class="number">3</span>”);  </div><div class="line"></div><div class="line"><span class="keyword">var</span> array2;  </div><div class="line"></div><div class="line">array2 = array1.slice(<span class="number">0</span>);  </div><div class="line"></div><div class="line">array1.length = <span class="number">0</span>;  </div><div class="line"></div><div class="line">alert(array2); <span class="comment">//返回1、2、3</span></div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line"></div><div class="line">三、 使用concat()</div><div class="line"></div><div class="line">注意concat()返回的并不是调用函数的Array，而是一个新的Array，所以可以利用这一点进行复制。</div><div class="line"></div><div class="line">`<span class="string">``</span>js</div><div class="line"><span class="keyword">var</span> array1 = <span class="keyword">new</span> <span class="built_in">Array</span>(“<span class="number">1</span>”,”<span class="number">2</span>”,”<span class="number">3</span>”);  </div><div class="line"></div><div class="line"><span class="keyword">var</span> array2;  </div><div class="line"></div><div class="line">array2 = array1.concat();  </div><div class="line"></div><div class="line">array1.length = <span class="number">0</span>;  </div><div class="line"></div><div class="line">alert(array2); <span class="comment">//返回1、2、3</span></div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 

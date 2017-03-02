@@ -14,7 +14,8 @@
     
     <meta name="description" content="两种方式，但稍有区别
 1，in 运算符
-&amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;var&amp;lt;/span&amp;gt; obj = {name:&amp;lt;span class=&amp;quot;hljs-string&amp;quot;&amp;gt;&amp;apos;jack&amp;apos;">
+123var obj = &amp;#123;name:&#39;jack&#39;&amp;#125;;alert(&#39;name&#39; in obj); // --&amp;amp;gt; truealert(&#39;toString&#39; in obj); // --&amp;amp;gt; true
+可看到无论是na">
     
     
     
@@ -88,7 +89,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-10-26T06:11:48.000Z" itemprop="datePublished">2016-10-26</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.448Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:16:29.254Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -102,18 +103,12 @@
 		
 		<p>两种方式，但稍有区别</p>
 <p>1，in 运算符</p>
-<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; obj = {name:&lt;span class=&quot;hljs-string&quot;&gt;&apos;jack&apos;&lt;/span&gt;};
-alert(&lt;span class=&quot;hljs-string&quot;&gt;&apos;name&apos;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; obj); &lt;span class=&quot;hljs-comment&quot;&gt;// --&amp;gt; true&lt;/span&gt;
-alert(&lt;span class=&quot;hljs-string&quot;&gt;&apos;toString&apos;&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; obj); &lt;span class=&quot;hljs-comment&quot;&gt;// --&amp;gt; true&lt;/span&gt;`&lt;/pre&gt;
-
-可看到无论是name，还是原形链上的toString，都能检测到返回true。
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">'jack'</span>&#125;;</div><div class="line">alert(<span class="string">'name'</span> <span class="keyword">in</span> obj); <span class="comment">// --&amp;gt; true</span></div><div class="line">alert(<span class="string">'toString'</span> <span class="keyword">in</span> obj); <span class="comment">// --&amp;gt; true</span></div></pre></td></tr></table></figure>
+<pre><code>可看到无论是name，还是原形链上的toString，都能检测到返回true。
 
 2，hasOwnProperty 方法
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; obj = {name:&lt;span class=&quot;hljs-string&quot;&gt;&apos;jack&apos;&lt;/span&gt;};
-obj.hasOwnProperty(&lt;span class=&quot;hljs-string&quot;&gt;&apos;name&apos;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;// --&amp;gt; true&lt;/span&gt;
-obj.hasOwnProperty(&lt;span class=&quot;hljs-string&quot;&gt;&apos;toString&apos;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;// --&amp;gt; false&lt;/span&gt;
-</code></pre><p>原型链上继承过来的属性无法通过hasOwnProperty检测到，返回false。</p>
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">'jack'</span>&#125;;</div><div class="line">obj.hasOwnProperty(<span class="string">'name'</span>); <span class="comment">// --&amp;gt; true</span></div><div class="line">obj.hasOwnProperty(<span class="string">'toString'</span>); <span class="comment">// --&amp;gt; false</span></div></pre></td></tr></table></figure>
+<p>原型链上继承过来的属性无法通过hasOwnProperty检测到，返回false。</p>
 <p>需注意的是，虽然in能检测到原型链的属性，但for in通常却不行。</p>
   
 	</div>

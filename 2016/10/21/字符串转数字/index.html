@@ -89,7 +89,7 @@ js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成�
     </p>
   <p class="article-time">
     <time datetime="2016-10-21T09:01:35.000Z" itemprop="datePublished">2016-10-21</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.448Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:20:17.781Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -105,38 +105,18 @@ js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成�
 <p>转换函数、强制类型转换、利用js变量弱类型转换。</p>
 <p>1.转换函数：</p>
 <p>js提供了parseInt()和parseFloat()两个转换函数。前者把值转换成整数，后者把值转换成浮点数。只有对String类型调用这些方法，这两个函数才能正确运行；对其他类型返回的都是NaN(Not a Number)。</p>
-<pre><code>&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;1234blue&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 1234&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;0xA&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 10&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;22.5&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 22&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;blue&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns NaN&lt;/span&gt;`&lt;/pre&gt;
-
-parseInt()方法还有基模式，可以把二进制、八进制、十六进制或其他任何进制的字符串转换成整数。基是由parseInt()方法的第二个参数指定的，示例如下：
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;AF&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;16&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 175&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;10&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 2&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;10&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 8&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;10&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 10&lt;/span&gt;`&lt;/pre&gt;
-
-如果十进制数包含前导0，那么最好采用基数10，这样才不会意外地得到八进制的值。例如：
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;010&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 8&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;010&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;8&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 8&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;010&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 10&lt;/span&gt;`&lt;/pre&gt;
-
-parseFloat()方法与parseInt()方法的处理方式相似。 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="string">"1234blue"</span>); <span class="comment">//returns 1234</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"0xA"</span>); <span class="comment">//returns 10</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"22.5"</span>); <span class="comment">//returns 22</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"blue"</span>); <span class="comment">//returns NaN</span></div></pre></td></tr></table></figure>
+<pre><code>parseInt()方法还有基模式，可以把二进制、八进制、十六进制或其他任何进制的字符串转换成整数。基是由parseInt()方法的第二个参数指定的，示例如下：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="string">"AF"</span>, <span class="number">16</span>); <span class="comment">//returns 175</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">2</span>); <span class="comment">//returns 2</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">8</span>); <span class="comment">//returns 8</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">10</span>); <span class="comment">//returns 10</span></div></pre></td></tr></table></figure>
+<pre><code>如果十进制数包含前导0，那么最好采用基数10，这样才不会意外地得到八进制的值。例如：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>); <span class="comment">//returns 8</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>, <span class="number">8</span>); <span class="comment">//returns 8</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>, <span class="number">10</span>); <span class="comment">//returns 10</span></div></pre></td></tr></table></figure>
+<pre><code>parseFloat()方法与parseInt()方法的处理方式相似。 
 
 使用parseFloat()方法的另一不同之处在于，字符串必须以十进制形式表示浮点数，parseFloat()没有基模式。
 
 下面是使用parseFloat()方法的示例：
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;parseFloat&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;1234blue&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 1234.0&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseFloat&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;0xA&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns NaN&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseFloat&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;22.5&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 22.5&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseFloat&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;22.34.5&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 22.34&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseFloat&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;0908&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns 908&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;parseFloat&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;blue&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//returns NaN&lt;/span&gt;`&lt;/pre&gt;
-
-2.强制类型转换
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseFloat</span>(<span class="string">"1234blue"</span>); <span class="comment">//returns 1234.0</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">"0xA"</span>); <span class="comment">//returns NaN</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">"22.5"</span>); <span class="comment">//returns 22.5</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">"22.34.5"</span>); <span class="comment">//returns 22.34</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">"0908"</span>); <span class="comment">//returns 908</span></div><div class="line"><span class="built_in">parseFloat</span>(<span class="string">"blue"</span>); <span class="comment">//returns NaN</span></div></pre></td></tr></table></figure>
+<pre><code>2.强制类型转换
 
 还可使用强制类型转换（type casting）处理转换值的类型。使用强制类型转换可以访问特定的值，即使它是另一种类型的。 
 
@@ -153,41 +133,16 @@ String(value)——把给定的值转换成字符串。
 当要转换的值是至少有一个字符的字符串、非0数字或对象（下一节将讨论这一点）时，Boolean()函数将返回true。如果该值是空字符串、数字0、undefined或null，它将返回false。
 
 可以用下面的代码段测试Boolean型的强制类型转换。
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;Boolean&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//false – empty string&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Boolean&lt;/span&gt;(&lt;span class=&quot;hljs-string&quot;&gt;&quot;hi&quot;&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//true – non-empty string&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Boolean&lt;/span&gt;(&lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//true – non-zero number&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Boolean&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;null&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//false - null&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Boolean&lt;/span&gt;(&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//false - zero&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Boolean&lt;/span&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;Object&lt;/span&gt;()); &lt;span class=&quot;hljs-comment&quot;&gt;//true – object&lt;/span&gt;`&lt;/pre&gt;
-
-Number()的强制类型转换与parseInt()和parseFloat()方法的处理方式相似，只是它转换的是整个值，而不是部分值。示例如下：
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;false&lt;/span&gt;) &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;) &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;undefined&lt;/span&gt;) &lt;span class=&quot;hljs-literal&quot;&gt;NaN&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;null&lt;/span&gt;) &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;( &lt;span class=&quot;hljs-string&quot;&gt;&quot;5.5 &quot;&lt;/span&gt;) &lt;span class=&quot;hljs-number&quot;&gt;5.5&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;( &lt;span class=&quot;hljs-string&quot;&gt;&quot;56 &quot;&lt;/span&gt;) &lt;span class=&quot;hljs-number&quot;&gt;56&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;( &lt;span class=&quot;hljs-string&quot;&gt;&quot;5.6.7 &quot;&lt;/span&gt;) &lt;span class=&quot;hljs-literal&quot;&gt;NaN&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;(&lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;Object&lt;/span&gt;()) &lt;span class=&quot;hljs-literal&quot;&gt;NaN&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;Number&lt;/span&gt;(&lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;) &lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;`&lt;/pre&gt;
-
-最后一种强制类型转换方法String()是最简单的，示例如下：
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; s1 = &lt;span class=&quot;hljs-built_in&quot;&gt;String&lt;/span&gt;(&lt;span class=&quot;hljs-literal&quot;&gt;null&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;//&quot;null&quot;&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; oNull = &lt;span class=&quot;hljs-literal&quot;&gt;null&lt;/span&gt;;
-&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; s2 = oNull.toString(); &lt;span class=&quot;hljs-comment&quot;&gt;//won&apos;t work, causes an error&lt;/span&gt;`&lt;/pre&gt;
-
-3.利用js变量弱类型转换
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Boolean</span>(<span class="string">""</span>); <span class="comment">//false – empty string</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="string">"hi"</span>); <span class="comment">//true – non-empty string</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="number">100</span>); <span class="comment">//true – non-zero number</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>); <span class="comment">//false - null</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>); <span class="comment">//false - zero</span></div><div class="line"><span class="built_in">Boolean</span>(<span class="keyword">new</span> <span class="built_in">Object</span>()); <span class="comment">//true – object</span></div></pre></td></tr></table></figure>
+<pre><code>Number()的强制类型转换与parseInt()和parseFloat()方法的处理方式相似，只是它转换的是整个值，而不是部分值。示例如下：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>(<span class="literal">false</span>) <span class="number">0</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">true</span>) <span class="number">1</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) <span class="literal">NaN</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) <span class="number">0</span></div><div class="line"><span class="built_in">Number</span>( <span class="string">"5.5 "</span>) <span class="number">5.5</span></div><div class="line"><span class="built_in">Number</span>( <span class="string">"56 "</span>) <span class="number">56</span></div><div class="line"><span class="built_in">Number</span>( <span class="string">"5.6.7 "</span>) <span class="literal">NaN</span></div><div class="line"><span class="built_in">Number</span>(<span class="keyword">new</span> <span class="built_in">Object</span>()) <span class="literal">NaN</span></div><div class="line"><span class="built_in">Number</span>(<span class="number">100</span>) <span class="number">100</span></div></pre></td></tr></table></figure>
+<pre><code>最后一种强制类型转换方法String()是最简单的，示例如下：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s1 = <span class="built_in">String</span>(<span class="literal">null</span>); <span class="comment">//"null"</span></div><div class="line"><span class="keyword">var</span> oNull = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> s2 = oNull.toString(); <span class="comment">//won't work, causes an error</span></div></pre></td></tr></table></figure>
+<pre><code>3.利用js变量弱类型转换
 
 举个小例子，就明白了。
 
-&lt;pre class=&quot;prettyprint&quot;&gt;`&amp;lt;script&amp;gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; str= &lt;span class=&quot;hljs-string&quot;&gt;&apos;012.345 &apos;&lt;/span&gt;;
-&lt;span class=&quot;hljs-keyword&quot;&gt;var&lt;/span&gt; x = str-&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
-x = x*&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;;
-&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str= <span class="string">'012.345 '</span>;</div><div class="line"><span class="keyword">var</span> x = str<span class="number">-0</span>;</div><div class="line">x = x*<span class="number">1</span>;</div></pre></td></tr></table></figure>
 </code></pre><p>上例利用了js的弱类型的特点，只进行了算术运算，实现了字符串到数字的类型转换，不过这个方法还是不推荐的</p>
   
 	</div>

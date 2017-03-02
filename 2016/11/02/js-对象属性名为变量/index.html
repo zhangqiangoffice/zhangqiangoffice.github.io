@@ -13,8 +13,7 @@
     <meta name="author" content="无名大强">
     
     <meta name="description" content="在React项目中不可避免要用到setState(obj)这个函数，其中，obj为一个对象。如果传不同的obj可以，修改组件不同的状态。有的时候就想obj能根据参数动态生成。
-handleChange(event, type) {
-    &amp;lt;span class=&amp;quot;hljs-keyw">
+123456handleChange(event, type) &amp;#123;    let val = event.targ">
     
     
     
@@ -88,7 +87,7 @@ handleChange(event, type) {
     </p>
   <p class="article-time">
     <time datetime="2016-11-02T04:21:55.000Z" itemprop="datePublished">2016-11-02</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.446Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:29:59.976Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -101,22 +100,9 @@ handleChange(event, type) {
 		</div>
 		
 		<p>在React项目中不可避免要用到setState(obj)这个函数，其中，obj为一个对象。如果传不同的obj可以，修改组件不同的状态。有的时候就想obj能根据参数动态生成。</p>
-<pre><code>handleChange(event, type) {
-    &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; val = event.target.value.trim();
-    &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.setState({
-        type: val 
-    });
-}`&lt;/pre&gt;
-
-这里就是希望通过参数type来修改不同的状态，但这么写是不能正确实现的，因为type是一个变量，这里是要用变量作为js对象的属性名，正确写法如下：
-
-&lt;pre class=&quot;prettyprint&quot;&gt;`handleChange(event, type) {
-    &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; val = event.target.value.trim();
-    &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; change = {};
-    change[type] = val;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.setState(change);
-}
-</code></pre>  
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">handleChange(event, type) &#123;</div><div class="line">    <span class="keyword">let</span> val = event.target.value.trim();</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">        <span class="attr">type</span>: val </div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>这里就是希望通过参数type来修改不同的状态，但这么写是不能正确实现的，因为type是一个变量，这里是要用变量作为js对象的属性名，正确写法如下：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">handleChange(event, type) &#123;</div><div class="line">    <span class="keyword">let</span> val = event.target.value.trim();</div><div class="line">    <span class="keyword">let</span> change = &#123;&#125;;</div><div class="line">    change[type] = val;</div><div class="line">    <span class="keyword">this</span>.setState(change);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 

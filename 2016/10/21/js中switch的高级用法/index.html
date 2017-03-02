@@ -12,9 +12,7 @@
     
     <meta name="author" content="无名大强">
     
-    <meta name="description" content="项目中用到的一段switch代码：
-&amp;lt;span class=&amp;quot;hljs-comment&amp;quot;&amp;gt;//在switch的case中使用条件判断&amp;lt;/span&amp;gt;
-&amp;lt;span class=&amp;quot;hljs-keyword&amp;quot;&amp;gt;let&amp;lt;/spa">
+    <meta name="description" content="项目中用到的一段switch代码：1234567891011121314151617//在switch的case中使用条件判断let label = &#39;&#39;;const choice = this.props.insurance.choice;switch (true) &amp;#123;    case ">
     
     
     
@@ -88,7 +86,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-10-21T03:33:53.000Z" itemprop="datePublished">2016-10-21</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.446Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:28:51.896Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -100,25 +98,8 @@
 		
 		</div>
 		
-		<p>项目中用到的一段switch代码：</p>
-<pre><code>&lt;span class=&quot;hljs-comment&quot;&gt;//在switch的case中使用条件判断&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; label = &lt;span class=&quot;hljs-string&quot;&gt;&apos;&apos;&lt;/span&gt;;
-&lt;span class=&quot;hljs-keyword&quot;&gt;const&lt;/span&gt; choice = &lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;.props.insurance.choice;
-&lt;span class=&quot;hljs-keyword&quot;&gt;switch&lt;/span&gt; (&lt;span class=&quot;hljs-literal&quot;&gt;true&lt;/span&gt;) {
-    &lt;span class=&quot;hljs-keyword&quot;&gt;case&lt;/span&gt; choice === &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;:
-        label = &lt;span class=&quot;hljs-string&quot;&gt;&quot;投保&quot;&lt;/span&gt;;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;break&lt;/span&gt;;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;case&lt;/span&gt; choice === -&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;:
-        label = &lt;span class=&quot;hljs-string&quot;&gt;&quot;不投保&quot;&lt;/span&gt;;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;break&lt;/span&gt;;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;case&lt;/span&gt; choice &amp;gt;= &lt;span class=&quot;hljs-number&quot;&gt;10000&lt;/span&gt;:
-        label = (choice / &lt;span class=&quot;hljs-number&quot;&gt;10000&lt;/span&gt;) + &lt;span class=&quot;hljs-string&quot;&gt;&apos;万&apos;&lt;/span&gt;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;break&lt;/span&gt;;
-    &lt;span class=&quot;hljs-keyword&quot;&gt;default&lt;/span&gt;:
-        label = choice;
-        &lt;span class=&quot;hljs-keyword&quot;&gt;break&lt;/span&gt;;
-}
-</code></pre>  
+		<p>项目中用到的一段switch代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在switch的case中使用条件判断</span></div><div class="line"><span class="keyword">let</span> label = <span class="string">''</span>;</div><div class="line"><span class="keyword">const</span> choice = <span class="keyword">this</span>.props.insurance.choice;</div><div class="line"><span class="keyword">switch</span> (<span class="literal">true</span>) &#123;</div><div class="line">    <span class="keyword">case</span> choice === <span class="number">0</span>:</div><div class="line">        label = <span class="string">"投保"</span>;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> choice === <span class="number">-1</span>:</div><div class="line">        label = <span class="string">"不投保"</span>;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> choice &gt;= <span class="number">10000</span>:</div><div class="line">        label = (choice / <span class="number">10000</span>) + <span class="string">'万'</span></div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">        label = choice;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 

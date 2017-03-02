@@ -87,7 +87,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-02-21T04:35:51.000Z" itemprop="datePublished">2017-02-21</time>
-    更新日期:<time datetime="2017-02-27T00:52:18.445Z" itemprop="dateModified">2017-02-27</time>
+    更新日期:<time datetime="2017-03-02T06:25:50.562Z" itemprop="dateModified">2017-03-02</time>
     
   </p>
 </header>
@@ -102,9 +102,8 @@
 		<h1 id="360浏览器默认打开页面的方式（极速、IE）"><a href="#360浏览器默认打开页面的方式（极速、IE）" class="headerlink" title="360浏览器默认打开页面的方式（极速、IE）"></a>360浏览器默认打开页面的方式（极速、IE）</h1><p>一直对360家的东西没有好感，流氓软件一般，尤其是360浏览器，在客户的电脑上默认安装，默认优先启动。更可气的是，它都是以IE的模式来打开我的网页。好几次，我被叫到客户面前调试，都是因为这个问题。 </p>
 <p>后来发现，打开360浏览器自家的网页，他默认用极速模式，而且还提示“此页面须在极速模式下显示，不可切换”。我突然意识到，我也应该可以给自己的页面设置默认打开方式，默认用极速模式，这样就不会出问题了。一番搜索号不出所料，真的有这样的设置。</p>
 <h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>在HTML的 head 部分加两句代码，例如：</p>
-<pre><code>&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;renderer&quot;&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;webkit&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-title&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;hljs-attribute&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;hljs-value&quot;&gt;&quot;IE=edge,chrome=1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-</code></pre><p>亲测，确实有用！</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>亲测，确实有用！</p>
   
 	</div>
 		<footer class="article-footer clearfix">

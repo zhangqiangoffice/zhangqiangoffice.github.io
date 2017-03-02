@@ -6,42 +6,45 @@ date: 2016-10-21 11:09:49
 
 最近在尝试React，发现之前很多用jQuery就能轻松解决的事情，现在遇到了新的挑战。当然这并不表示React不行，而是我还需要更多的研究和探索。React中的点击事件，想要传参数给方法，始终不得要领，现在摸索出一套写法，也许不是很完善，但先记录下来，以备以后改进
 
-    <span class="hljs-keyword">class</span> SchemeSwitcher extends Component {
-        constructor(props){
-            super(props);
+```js
+class SchemeSwitcher extends Component {
+    constructor(props){
+        super(props);
 
-            <span class="hljs-keyword">this</span>.handleClick = <span class="hljs-keyword">this</span>.handleClick.bind(<span class="hljs-keyword">this</span>);
+        this.handleClick = this.handleClick.bind(this);
 
-        };
+    };
 
-        handleClick(event) {
-            console.log(event.target.dataset.index);
-        }
+    handleClick(event) {
+        console.log(event.target.dataset.index);
+    }
 
-        render() {
+    render() {
 
-            <span class="hljs-keyword">const</span> listShows = appInfo.threeSchemeNameList.map((nameStr, index) =&gt; {
-                <span class="hljs-keyword">let</span> classStr = (index === <span class="hljs-keyword">this</span>.props.schemeIndex) ? <span class="hljs-string">'selected'</span> : <span class="hljs-string">''</span>;
-
-                <span class="hljs-keyword">return</span> (
-                    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classStr}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> <span class="hljs-attribute">data-index</span>=<span class="hljs-value">{index}</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>&gt;</span>{nameStr}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-                )
-
-            });
+        const listShows = appInfo.threeSchemeNameList.map((nameStr, index) => {
+            let classStr = (index === this.props.schemeIndex) ? 'selected' : '';
 
             return (
-                <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"switcher"</span>&gt;</span>
-                    {listShows}
-                <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+                <li className={classStr} key={index} data-index={index} onClick={this.handleClick}>{nameStr}</li>
+            )
 
-            );
-        };
+        });
 
-    }</span>`</pre>
+        return (
+            <ul className="switcher">
+                {listShows}
+            </ul>
+
+        );
+    };
+
+}
+```
 
     其中：
-
-    <pre class="prettyprint">`<span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classStr}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> <span class="hljs-attribute">data-index</span>=<span class="hljs-value">{index}</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>&gt;</span>{nameStr}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+```js
+<li className={classStr} key={index} data-index={index} onClick={this.handleClick}>{nameStr}</li>
+```
 
 虽然key是React必须传的，但在组件中却不能获取； 
 

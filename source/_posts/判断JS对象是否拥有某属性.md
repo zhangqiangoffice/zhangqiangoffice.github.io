@@ -8,17 +8,21 @@ date: 2016-10-26 14:11:48
 
 1，in 运算符
 
-    <span class="hljs-keyword">var</span> obj = {name:<span class="hljs-string">'jack'</span>};
-    alert(<span class="hljs-string">'name'</span> <span class="hljs-keyword">in</span> obj); <span class="hljs-comment">// --&gt; true</span>
-    alert(<span class="hljs-string">'toString'</span> <span class="hljs-keyword">in</span> obj); <span class="hljs-comment">// --&gt; true</span>`</pre>
+```js
+  var obj = {name:'jack'};
+  alert('name' in obj); // --&gt; true
+  alert('toString' in obj); // --&gt; true
+```
 
     可看到无论是name，还是原形链上的toString，都能检测到返回true。
 
     2，hasOwnProperty 方法
 
-    <pre class="prettyprint">`<span class="hljs-keyword">var</span> obj = {name:<span class="hljs-string">'jack'</span>};
-    obj.hasOwnProperty(<span class="hljs-string">'name'</span>); <span class="hljs-comment">// --&gt; true</span>
-    obj.hasOwnProperty(<span class="hljs-string">'toString'</span>); <span class="hljs-comment">// --&gt; false</span>
+```js
+  var obj = {name:'jack'};
+  obj.hasOwnProperty('name'); // --&gt; true
+  obj.hasOwnProperty('toString'); // --&gt; false
+```
 
 原型链上继承过来的属性无法通过hasOwnProperty检测到，返回false。
 

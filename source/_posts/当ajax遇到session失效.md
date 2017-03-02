@@ -9,7 +9,7 @@ date: 2016-10-10 14:37:15
 在header中加入sessionstatus 
 
 Java代码  
-
+```java
     if (session == null || session.getAttribute("user") == null) {  
         // *用户登录以后需手动添加session  
         if("XMLHttpRequest".equals(request.getHeader("X-Requested-With"))){  
@@ -21,15 +21,15 @@ Java代码
         // 如果session为空表示用户没有登录就重定向到login.jsp页面  
         return;  
     }  
-    `</pre>
+``` 
 
     页面引入jquery ajax请求的通用代码
 
     解析header中的sessionstatus 
 
     Js代码  
-
-    <pre>`//全局的AJAX访问，处理AJAX清求时SESSION超时  
+```js
+    //全局的AJAX访问，处理AJAX清求时SESSION超时  
     if(typeof($)!="undefined"){  
         $.ajaxSetup({  
             contentType : "application/x-www-form-urlencoded;charset=utf-8",  
@@ -44,3 +44,4 @@ Java代码
             }  
         });  
     }  
+```
